@@ -62,6 +62,17 @@ func deleteEmployee(id int) {
 	fmt.Println("Employee not found")
 }
 
+func salaryReport() {
+	var totalSalary float64
+
+	for _, employee := range employees {
+		totalSalary += employee.Salary
+	}
+
+	fmt.Printf("\nTotal Employees: %d\n", len(employees))
+	fmt.Printf("Total Salary: %.2f\n", totalSalary)
+}
+
 func main() {
 	addEmployee(101, "Sanskriti", 45000)
 	addEmployee(102, "Rahul", 50000)
@@ -73,4 +84,6 @@ func main() {
 	deleteEmployee(102)
 
 	displayEmployees()
+
+	salaryReport()
 }
