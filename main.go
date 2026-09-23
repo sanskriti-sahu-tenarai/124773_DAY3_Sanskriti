@@ -62,6 +62,18 @@ func deleteEmployee(id int) {
 	fmt.Println("Employee not found")
 }
 
+func updateEmployee(id int, newSalary float64) {
+	for i := range employees {
+		if employees[i].ID == id {
+			employees[i].Salary = newSalary
+			fmt.Println("Employee updated successfully")
+			return
+		}
+	}
+
+	fmt.Println("Employee not found")
+}
+
 func main() {
 	addEmployee(101, "Sanskriti", 45000)
 	addEmployee(102, "Rahul", 50000)
